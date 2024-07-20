@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #9f8ec8 0%, #f5f3fc 100%);
+            color: #333;
+        }
+        .navbar {
+            background-color: #dccce6;
+        }
+        .navbar-brand {
+            font-family: 'Lucida Console', Courier, monospace;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #4a148c;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #6a1b9a;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Aniket Jadhav</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/htmlDemo">HTML Demo</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/students/add">Add Student</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
+                <li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+                <li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container mt-5">
+        <h1>Add Student</h1>
+        <form method="POST" action="/students/add">
+            <h2>Personal Information</h2>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="addressStreet">Address (Street):</label>
+                    <input type="text" class="form-control" id="addressStreet" name="addressStreet">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="addressCity">Address (City):</label>
+                    <input type="text" class="form-control" id="addressCity" name="addressCity">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="addressProvince">Address (Province):</label>
+                    <input type="text" class="form-control" id="addressProvince" name="addressProvince">
+                </div>
+            </div>
+            <h2>Academic Information</h2>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>College Employment:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="TA" id="taYes" value="Yes">
+                        <label class="form-check-label" for="taYes">Teaching Assistant</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Enrollment Status:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="status" id="statusFullTime" value="Full Time">
+                        <label class="form-check-label" for="statusFullTime">Full Time</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="status" id="statusPartTime" value="Part Time">
+                        <label class="form-check-label" for="statusPartTime">Part Time</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="course">Enrolled in Course:</label>
+                    <select class="form-control" id="course" name="course" required>
+                        <option value="Relational Database Design and Implementation">Relational Database Design and Implementation</option>
+                        <option value="Business Inforamtion Technology">Business Inforamtion Technology</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Student</button>
+        </form>
+    </main>
+</body>
+</html>
