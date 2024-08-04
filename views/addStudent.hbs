@@ -1,51 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Student</title>
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background: linear-gradient(to bottom, #9f8ec8 0%, #f5f3fc 100%);
-            color: #333;
-        }
-        .navbar {
-            background-color: #dccce6;
-        }
-        .navbar-brand {
-            font-family: 'Lucida Console', Courier, monospace;
-        }
-        .form-group label {
-            font-weight: bold;
-        }
-        .btn-primary {
-            background-color: #4a148c;
-            border: none;
-        }
-        .btn-primary:hover {
-            background-color: #6a1b9a;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Aniket Jadhav</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/htmlDemo">HTML Demo</a></li>
-                <li class="nav-item active"><a class="nav-link" href="/students/add">Add Student</a></li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
-                <li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
-                <li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
-            </ul>
-        </div>
-    </nav>
-    <main class="container mt-5">
+<main class="container mt-5">
         <h1>Add Student</h1>
         <form method="POST" action="/students/add">
             <h2>Personal Information</h2>
@@ -101,14 +54,18 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="course">Enrolled in Course:</label>
-                    <select class="form-control" id="course" name="course" required>
-                        <option value="Relational Database Design and Implementation">Relational Database Design and Implementation</option>
-                        <option value="Business Inforamtion Technology">Business Inforamtion Technology</option>
+                    {{#if courses}}
+                    <select class="form-control" name="course" id="course">
+                    <option value="">Select Course</option>
+                    {{#each courses}}
+                    <option value="{{courseId}}">{{courseCode}}</option>
+                    {{/each}}
                     </select>
+                    {{else}}
+                    <div>No Courses</div>
+                    {{/if}}
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Add Student</button>
         </form>
     </main>
-</body>
-</html>

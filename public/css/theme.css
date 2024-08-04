@@ -80,3 +80,24 @@ caption {
     width: 200px;
     height: auto;
 }
+
+body {
+    background: linear-gradient(to bottom, #9f8ec8 0%, #f5f3fc 100%);
+    color: #333;
+}
+.navbar {
+    background-color: #dccce6;
+}
+.navbar-brand {
+    font-family: 'Lucida Console', Courier, monospace;
+}
+.form-group label {
+    font-weight: bold;
+}
+.btn-primary {
+    background-color: #4a148c;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #6a1b9a;
+}

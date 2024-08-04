@@ -16,11 +16,13 @@
                 <tr>
                     <td><a href="/course/{{courseId}}">{{courseCode}}</a></td>
                     <td><a href="/students?course={{courseId}}">{{courseDescription}}</a></td>
+                    <td><a href="/course/delete/{{this.courseId}}"><button class="btn btn-danger"> Remove </button></a></td>
                 </tr>
             {{/each}}
             </tbody>
         </table>
         </div>
+        <a href="/courses/add" class="btn btn-success float-right">Add New Course</a>
         
     </div>
      {{#unless courses}}

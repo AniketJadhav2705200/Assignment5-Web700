@@ -25,11 +25,13 @@
                     <td>{{addressStreet}} {{addressCity}} {{addressProvince}}</td>
                     <td>{{status}}</td>
                     <td><a href="/students?course={{course}}">{{course}}</a></td>
+                    <td><a href="/student/delete/{{this.studentNum}}"><button class="btn btn-danger"> Remove </button></a></td>
                 </tr>
             {{/each}}
             </tbody>
         </table>
         </div>
+         <a href="/students/add" class="btn btn-success float-right">Add New Student</a>
     </div>
     {{#unless students}}
     <div class="col-md-12 text-center">
